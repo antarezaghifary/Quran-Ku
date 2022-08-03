@@ -86,10 +86,13 @@ dependencies {
     implementation "org.kodein.di:kodein-di-generic-jvm:$kodein_version"
     implementation "org.kodein.di:kodein-di-framework-android-x:$kodein_version"
 
-    // Utils
-    implementation "androidx.viewpager2:viewpager2:1.0.0"
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-
     //Swiperefresh
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    def swipe_version = "1.0.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_version"
+
+    // Utils
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.4'
+    implementation 'com.github.florent37:expansionpanel:1.2.4'
+    implementation 'com.github.delight-im:Android-SimpleLocation:v1.1.0'
 }
