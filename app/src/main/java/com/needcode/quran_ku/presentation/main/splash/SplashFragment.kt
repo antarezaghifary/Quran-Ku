@@ -1,24 +1,22 @@
 package com.needcode.quran_ku.presentation.main.splash
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.needcode.quran_ku.databinding.FragmentSplashBinding
+import com.needcode.quran_ku.presentation.abstraction.BaseFragment
 import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class SplashFragment : Fragment() {
+class SplashFragment : BaseFragment<FragmentSplashBinding>() {
+    override val binding: FragmentSplashBinding by viewBinding()
 
-    private val binding: FragmentSplashBinding by viewBinding()
+    override fun initAction() {
+        super.initAction()
+        lifecycleScope.launch {
+            delay(2000)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        return binding.root
+        }
     }
+
 
 }
