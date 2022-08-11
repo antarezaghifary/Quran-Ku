@@ -4,7 +4,7 @@ import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.needcode.quran_ku.BuildConfig
-import com.needcode.quran_ku.data.web.QuranApi
+import com.needcode.quran_ku.data.web.QuranApiClient
 import com.needcode.quran_ku.utility.Credential
 import com.oratakashi.viewbinding.core.tools.retrofit.createOkHttpClient
 import com.oratakashi.viewbinding.core.tools.retrofit.createReactiveService
@@ -45,7 +45,7 @@ val networkModule = module {
 
     single {
         createReactiveService(
-            QuranApi::class.java,
+            QuranApiClient::class.java,
             get(),
             Credential.getBaseUrl()
         )
