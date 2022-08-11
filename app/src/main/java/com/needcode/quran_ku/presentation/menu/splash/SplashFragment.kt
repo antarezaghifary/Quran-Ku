@@ -1,4 +1,4 @@
-package com.needcode.quran_ku.presentation.main.splash
+package com.needcode.quran_ku.presentation.menu.splash
 
 import androidx.lifecycle.lifecycleScope
 import com.needcode.quran_ku.databinding.FragmentSplashBinding

@@ -2,7 +2,7 @@ package com.needcode.quran_ku.presentation.navigation
 
 import androidx.navigation.NavController
 import com.needcode.quran_ku.R
-import com.needcode.quran_ku.presentation.main.splash.SplashFragmentDirections
+import com.needcode.quran_ku.presentation.menu.splash.SplashFragmentDirections
 import com.needcode.quran_ku.utility.getDefaultNavOptions
 
 class MainNavigationController(
