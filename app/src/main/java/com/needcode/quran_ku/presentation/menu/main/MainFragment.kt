@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.needcode.quran_ku.databinding.FragmentMainBinding
 import com.needcode.quran_ku.domain.model.surah.Surah
 import com.needcode.quran_ku.presentation.abstraction.BaseFragment
+import com.needcode.quran_ku.presentation.navigation.MainNavigation
 import com.needcode.quran_ku.utility.addObservers
+import com.needcode.quran_ku.utility.navigation
 import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
 import com.oratakashi.viewbinding.core.tools.showDefaultLayout
 import com.oratakashi.viewbinding.core.tools.showLoadingLayout
@@ -15,8 +17,11 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainFragment : BaseFragment<FragmentMainBinding>(), MainDataContract {
     override val binding: FragmentMainBinding by viewBinding()
     private val viewModel: MainViewModel by viewModel()
+    private val nav: MainNavigation by navigation { activity }
     private val surahAdapter: SurahAdapter by lazy {
-        SurahAdapter()
+        SurahAdapter {
+            nav.toDetail(it)
+        }
     }
 
     override fun initUI() {
