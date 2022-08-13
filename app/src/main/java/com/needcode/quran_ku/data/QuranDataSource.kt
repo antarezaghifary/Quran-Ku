@@ -15,8 +15,14 @@ class QuranDataSource(
             saveToDb = { dbSurah.insertAll(it) },
             fetchDb = { dbSurah.getAll() },
             fetchApi = { webService.getSurah() },
-            onConflict = { api, _ -> api.map { it.toSurahEntity() } },
-            alwaysUpToDate = { it.isEmpty() }
+            //_ diubah jadi dbSurah
+            onConflict = { api, db ->
+                api.filter { !db.contains(it.toSurahEntity()) }.map {
+                    it.toSurahEntity()
+                }
+                //api.map { it.toSurahEntity() }
+            },
+            alwaysUpToDate = { true }
         )
     }
 }
