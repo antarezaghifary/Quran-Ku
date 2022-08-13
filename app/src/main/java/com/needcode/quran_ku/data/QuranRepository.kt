@@ -1,8 +1,9 @@
 package com.needcode.quran_ku.data
 
-import com.needcode.quran_ku.data.model.surah.SurahItem
-import io.reactivex.Single
+import com.needcode.quran_ku.data.model.surah.SurahEntity
+import io.reactivex.Observable
 
 interface QuranRepository {
-    fun getSurah(): Single<List<SurahItem>>
+    fun getSurah(): Observable<List<SurahEntity>>
+
 }

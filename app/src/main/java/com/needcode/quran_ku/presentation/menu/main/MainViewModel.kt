@@ -8,7 +8,7 @@ import com.needcode.quran_ku.domain.model.surah.Surah
 import com.needcode.quran_ku.utility.immutable
 import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
-import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeSingle
+import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeObservable
 import io.reactivex.disposables.CompositeDisposable
 
 class MainViewModel(
@@ -20,7 +20,7 @@ class MainViewModel(
 
     fun getSurah() {
         useCase.getSurah()
-            .compose(composeSingle())
+            .compose(composeObservable())
             .subscribe({
                 _surah.postValue(State.success(it))
             }, {

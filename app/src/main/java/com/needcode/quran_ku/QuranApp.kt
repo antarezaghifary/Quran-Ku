@@ -2,6 +2,7 @@ package com.needcode.quran_ku
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.needcode.quran_ku.di.databaseModule
 import com.needcode.quran_ku.di.navigationModule
 import com.needcode.quran_ku.di.networkModule
 import com.needcode.quran_ku.di.quranModule
@@ -19,6 +20,7 @@ class QuranApp : Application() {
             modules(
                 networkModule,
                 navigationModule,
+                databaseModule,
                 quranModule
             )
         }
